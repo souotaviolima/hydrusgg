@@ -1,0 +1,83 @@
+token: "insert-your-token-here"
+
+# How many commands can run simultaneously
+# Quantos comandos podem rodar simultaneamente
+workers: 10
+
+framework: "auto"
+webhook: "discord-webhook-url"
+
+roleplay:
+  testdrive: true
+  plate_format: "DDLLLDDD"
+  vehicle_table: "vrp_user_vehicles"
+  house_table: "vrp_homes_permissions"
+  # How many hours the player has to redeem the credit (/store)
+  # Quantas horas o jogador tem para resgatar os créditos (/store)
+  credit_term: 72
+
+chat_message_css: &styles
+  padding: "10px"
+  margin: "5px 0"
+  background-image: "linear-gradient(to right, #b752ff 3%, #b752ff19 95%)"
+  border-radius: "5px"
+  color: "snow"
+  display: "flex"
+  align-items: "center"
+  justify-content: "center"
+  font-weight: "bold"
+
+# If you want to disable the chat message, just erase the line
+# Se você quiser desativar a mensagem no chat, apague a linha
+chat_styles: false
+
+# Command that show how much time is left from each temporary benefit
+# Comando que mostra quanto tempo falta para cada benefício temporário
+vip:
+  styles: *styles
+  command: "vip"
+
+credits:
+  temporary_vehicle:
+    name: "Temporary Vehicle"
+    days: 30
+    image: "https://picsum.photos/200"
+    vehicles:
+      xa21: "XA 21"
+      jester: "Jester"
+      blista: "Blista"
+
+  permanent_vehicle:
+    name: "Permanent Vehicle"
+    image: "https://picsum.photos/200"
+    vehicles:
+      xa21: "XA 21"
+      jester: "Jester"
+      blista: "Blista"
+
+  temporary_house:
+    name: "Temporary House"
+    days: 30
+    image: "https://picsum.photos/200"
+    houses: 
+    - [LX, 1, 100]
+    - [FH, 1, 100]
+
+  permanent_house:
+    name: "Permanent House"
+    image: "https://picsum.photos/200"
+    houses:
+    - [LX, 1, 100]
+    - [FH, 1, 100]
+
+  # custom_credit:
+  #   name: "Change Phone"
+  #   image: "https://picsum.photos/200"
+  #   form:
+  #     phone_number:
+  #       label: "Choose your Phone Number"
+  #       # This is the same as exports[resource_name][function](credit, source, selectedValue)
+  #       validation: [$exports, resource_name, function]
+  #       handler: [$exports, resource_name, function]
+  #       # rollback is useful when your form has multiple fields and one of them fail
+  #       rollback: [$exports, resource_name, function]
